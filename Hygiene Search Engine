@@ -1,0 +1,216 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Hygiene Search Engine</title>
+<link href="https://fonts.googleapis.com/css?family=Open+Sans">
+</head>
+
+<style>
+	body{font-family: 'Open Sans', sans-serif;}
+	input[type=date]
+		{font-family: 'Open Sans', sans-serif;
+		 padding:5px; 
+		 margin:70px 35px;
+		 border: 1px deepskyblue;
+		border-radius:5px;
+		}
+	input[type=checkbox]
+		{margin:37px -25px;}
+		{margin-top:35px;}
+	 
+	#wrap{margin:0;
+		  padding:0;
+		  max-width:2500px;
+		  height:auto;
+		  overflow:auto;
+		  background-image: url(img/background_img.png);
+		  background-size: cover;}
+	
+	#header{position:relative;
+			top:0;
+			left:0;
+			/*background-color:#C4D9FF;*/}
+	#header h3{font-size:12px;
+			   text-align: right; 
+			   margin:20px;
+			   padding:5px;}
+	#header h1{font-size:24px;
+			   text-align:center;
+			   margin:50px;
+			   padding:10px;}
+	#contents p{font-size:12px;}
+	#contents{position: relative;
+			  width: 100%;
+			  height: auto;
+			  /*background-color:#C4D9FF;*/}
+	#contents #left{position: absolute;
+				 	top:0;
+					left:10%;
+					width:50%;
+					height:600px;
+					/*background-color:rgba(237,222,238,1.00)*/;
+					}
+	
+	#contents #left #top{
+	float:left;
+	width:100%;
+	height:150px;
+	/*background-color: rgba(255,162,164,1.00)*/;
+								}
+	#contents #left #top p{ 
+		float:left;
+		margin-right:5px;}
+	
+	select{
+		float:left;
+		margin:45px 10px 0px 0px;
+		width:100px;
+		height:25px;
+		border:1px;
+		color:gray;
+		font-family: 'Open Sans', sans-serif;
+		font-size:12px;}
+	
+	#contents #left #bottom{
+			position: absolute;
+			top: 150px;
+			left:0;
+			width: 100%;
+			height: 200px;
+			/*background-color:rgba(206,156,157,1.00)*/;
+			}
+	#contents #left #bottom p{float:left;
+						      margin:25px 35px;}
+
+	input{
+		position:absolute;
+		width:100px;
+		padding: 10px 20px;
+		color:gray;
+		font-family: 'Open Sans', sans-serif;
+		}
+	.submit{float:left;
+			margin:80px -60px;
+	  		font-size:12px;
+			color:white;}
+	#right{position:relative;
+			  width:40%;
+			  height:600px;
+  			  float: right;
+			  top:0;
+			  right:10%;
+			  /*background-color:crimson;*/
+			  }
+	#right .graph{margin:00px 0 0 50px;}
+	#right .info{margin-left:50px;}
+	#footer{position:relative;
+			width:100%;
+			height:auto;
+			top:550px;
+			left:0;
+			/*background-color:#C4D9FF*/}
+	#footer p{font-size:12px;
+			   text-align: right; 
+			   margin:20px;
+			   padding:5px;}
+</style>
+	
+	
+<body>
+<div id="wrap">
+
+<header id="header">
+	<h3>Microsensor Labs</h3>
+		<h1>Hand Hygiene Analytics</h1>
+</header>
+
+<section id="contents">
+	<div id="left" >
+      <div id="top">
+		<form action="#" method="get">
+	  	 <p>Parameters</p>
+		  <select name="parameters" value="select" > 
+				  <datalist id="list1">
+					<option value="select">Select</option>
+					<option value="Hand Hygiene Opportunity">Hand Hygiene Opportunity</option>
+					<option value="Non Compliant Hand Hygiene">Non Compliant Hand Hygiene</option>
+					<option value="Part Compliant Hand Hygiene">Part Compliant Hand Hygiene</option>
+					<option value="Full Compliant Hand Hygiene">Full Compliant Hand Hygiene</option>
+					<option value="Non Compliant Hand Hygiene Rate">Non Compliant Hand Hygiene Rate</option>
+					<option value="Part Compliant Hand Hygiene Rate">Part Compliant Hand Hygiene Rate</option>
+					<option value="Full Compliant Hand Hygiene Rate">Full Compliant Hand Hygiene Rate</option>
+		    </datalist>
+		  </select>
+	<p>Location</p>	  
+		<select name="location">
+				<datalist id="list2">
+					<option value="select">Select</option>
+					<option value="ICUA">ICUA</option>
+					<option value="ICUB">ICUB</option>
+					<option value="ICUC">ICUC</option>
+					<option value="view all">View all</option>
+				</datalist>
+		</select>
+	
+	<p>Staffs</p>	
+		<select name="staff">
+					<datalist id="list3">
+					  <option value="select">Select</option>
+					  <option value="" disabled="disabled" selected = "selected">RN</option>  
+					  <option value="john">&nbsp;John</option>
+					  <option value="mark">&nbsp;Mark</option>
+					  <option value="amy">&nbsp;Amy</option>
+					  <option value="" disabled="disabled" selected = "selected">MD</option>  
+					  <option value="smith">&nbsp;Smith</option>
+					  <option value="" disabled="disabled" selected = "selected">Family</option>  
+					  <option value="jamie">&nbsp;Jamie</option>  
+					  <option value="" disabled="disabled" selected = "selected">PSA</option>  
+					  <option value="terri">&nbsp;Terri</option>    
+					  <option value="all3">&nbsp;All</option>  
+					</datalist>
+		  </select>
+		</form>
+	</div>	
+	
+	<div id="bottom">
+		<div class="calendar">
+ 		  <input type="date" name="start" max="2000-12-31" >
+  		  <p>Start Date</p>
+	  	  <input type="date" name="end" min="2000-01-02">
+		  <p>End Date</p>
+		</div>
+		
+	<div class="trend">
+		  <p>Daily Trend within one week</p>
+	  	  <input type="checkbox" name="trend" value = "on" />
+	</div>
+		
+		<div class="submit">
+				<button>Submit</button>
+		</div>
+	</div>
+	
+	</div>
+	
+	<div id="right">
+		<div class="graph">
+			<img src="img/evt_rt.png" alt="graph" width="80%">
+		</div>
+		<div class="info">
+		  <p>You have selected the following:<br><br>
+			   Parameter: Hand Hygiene Opportunity <br>
+			   Location: ICUA<br>
+		       Staff: All<br>
+			   From 20160203 to 20171224</p>
+		</div>
+	</div>
+</section>
+
+<footer id="footer">
+	<p>Microsensor Labs © 2016-2018. All rights reserved. </p>
+</footer>
+
+</div>
+</body>
+</html>
